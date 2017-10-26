@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <div class="post-preview">
+                    <h2 class="post-title">
+                        {{ author.name }}
+                    </h2>
+
+                    Tweets:
+                    <hr>
+                    {% for tweet in tweets %}
+                        <p class="post-meta">
+                            <a href="{{ path('single_tweet', {'id': tweet.id}) }}">{{ tweet.text }}</a>
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+{% endblock %}
+
